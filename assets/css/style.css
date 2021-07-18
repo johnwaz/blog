@@ -1,0 +1,65 @@
+.blockquote {
+  margin-top: 60px;
+}
+
+.checkmark {
+  list-style-type: none;
+}
+
+.checkmark li:before{
+  content: '✓';
+  margin-left: -30px;
+  margin-right: 10px;
+}
+
+code {
+  background-color: rgb(220, 220, 220);
+  color: black;
+  padding: 2px 4px;
+}
+
+.code {
+  background-color: rgb(250, 230, 230);
+  padding: 10px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.code-sol {
+  background-color: rgb(230, 250, 230);
+  padding: 10px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.credit {
+  margin-top: 10px;
+}
+
+.fcc {
+  background-color: black;
+  color: white;
+  padding: 2px 4px;
+}
+
+.fcc:hover {
+  color: silver;
+}
+
+.link {
+  color: blue;
+  text-decoration: none;
+}
+
+.man-thot {
+  color: blue;
+  text-decoration: none;
+}
+
+.man-thot:hover {
+  color: grey;
+}
+
+.solution {
+  margin-bottom: 5px;
+}

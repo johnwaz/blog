@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Create a Complex JSX Element</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="index.html">John Waz</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="post-3.html">Post</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('assets/img/blog-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="post-heading">
+                        <h1>Create a Complex JSX Element</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <p>The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.<br></p>
+                    <p>One important thing to know about nested JSX is that it must return a single element.<br></p>
+                    <p>This one parent element would wrap all of the other levels of nested elements.<br></p>
+                    <p>For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.<br></p>
+                    <p>Here's an example:</p>
+                    <p><strong>Valid JSX:</strong></p>
+                    <div class="code-sol">
+                        <code class="code-sol">&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;<br>&nbsp;&nbsp; &lt;/div&gt;</code><br>
+                    </div>
+                    <p><strong>Invalid JSX:</strong></p>
+                    <div class="code">
+                        <code class="code">&nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;</code><br>
+                    </div>
+                    <br>
+                    <hr>
+                    <p>Define a new constant <code>JSX</code> that renders a <code>div</code> which contains the following elements in order:<br><br>An <code>h1</code>, a <code>p</code>, and an unordered list that contains three <code>li</code> items. You can include any text you want within each element.<br><br><strong>Note:</strong>&nbsp;When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a <code>div</code> tag to wrap all the child elements within a single parent element. If you remove the <code>div</code>, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.<br></p>
+                    <hr>
+                    <p class="solution">My Solution:</p>
+                    <div class="code-sol">
+                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Hello&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;These are some of the guitars that I own&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp;&lt;ul&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Vintage Modified Electric&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Acoustic/Electric&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Jazz Bass&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp;&lt;/ul&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
+                    </div>
+                    <p class="solution">Tests:</p>
+                    <ul class="mb-0 checkmark">
+                        <li>The constant <code>JSX</code> should return a <code>div</code> element.</li>
+                        <li>The <code>div</code> should contain an <code>h1</code> tag as the first element.</code></li>
+                        <li>The <code>div</code> should contain a <code>p</code> tag as the second element.</code></li>
+                        <li>The <code>div</code> should contain a <code>ul</code> tag as the third element.</code></li>
+                        <li>The <code>ul</code> should contain three <code>li</code> elements.</code></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <ul class="list-inline text-center">
+                        <a href="https://www.linkedin.com/in/john-wasielewicz" target="_blank">
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-star fab fa-linkedin fa-2x"></i></span></li>
+                        </a>
+                        <li class="list-inline-item"></li>
+                        <a href="https://github.com/johnwaz" target="_blank">
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-star fab fa-github-square fa-2x"></i></span></li>
+                        </a>
+                    </ul>
+                    <p class="text-muted copyright">Copyright © John Waz 2021</p>
+                    <p class="text-muted copyright credit">Credit <a class="link" href="https://www.freecodecamp.org" target="_blank"><span class="fcc">freeCodeCamp</span></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
+</body>
+
+</html>
