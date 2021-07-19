@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>About</title>
+    <title>Add Comments in JSX</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,26 +31,41 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
-                    <div class="site-heading">
-                        <h1>About Me</h1><span class="subheading">Greetings are in order</span>
+                    <div class="post-heading">
+                        <h1>Add Comments in JSX</h1>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-8 mx-auto">
-                <p>Hello, I am John Wasielewicz. It's not easy to admit to people you don't know, or people you do know for that matter, how being a former alcoholic for close to 20 years has drastically impacted your life in many ways. Currently I have been sober for over six years now and spent the last few years on the coding journey of becoming a developer. During that time frame I have been learning programming skills such as Java, Spring, Hibernate, JavaScript, HTML, and CSS. I am presently on the track of learning React and will be sharing the lessons in this blog. Surely it will evolve into other things throughout the course of time.</p>
-                <p>If you're like me, blogging has not particularly been an interest except for running across them while looking up information. I have been advised to create a blog by someone who deceivingly seemed at first like a unique individual. It is very interesting to know that they have a company which is respected by software developers. This person can perfectly be described as what the Urban Dictionary has listed for one of the definitions of a "<a class="man-thot" href="https://www.urbandictionary.com/author.php?author=HeadSandwichMaker" target="_blank">man thot</a>". Typically I never write anything bad about people, but I would most likely not be doing this if it wasn't for them. I have to give credit for that alone.<br></p>
-                <p>So if you happen to be reading this one day, whoever you are, please do not judge me for any ignorance of not knowing or understanding things your particular way. I have been trying to the best of my ability to better myself in more ways than just programming.</p>
-                <blockquote class="blockquote">
-                    <p class="block-p">They say, "Everything happens for a reason." I guess we'll all find out in due time.</p>
-                    <p class="blockquote-footer block-footer">John Wasielewicz</p>
-                </blockquote>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <p>JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.<br></p>
+                    <p>To put comments inside JSX, you use the syntax <code>{/* */}</code> to wrap around the comment text.<br></p>
+                    <hr>
+                    <p>The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided <code>div</code> element, without modifying the existing <code>h1</code> or <code>p</code> elements.<br></p>
+                    <div class="code">
+                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;This is a block of JSX&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Here's a subtitle&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
+                    </div>
+                    <hr>
+                    <p class="solution">My Solution:</p>
+                    <div class="code-sol">
+                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;This is a block of JSX&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;{/* This is a comment */}<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Here's a subtitle&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
+                    </div>
+                    <p class="solution">Tests:</p>
+                    <ul class="mb-0 checkmark">
+                        <li>The constant <code>JSX</code> should return a <code>div</code> element.</li>
+                        <li>The <code>div</code> should contain an <code>h1</code> tag as the first element.</li>
+                        <li>The <code>div</code> should contain a <code>p</code> tag as the second element.</li>
+                        <li>The existing <code>h1</code> and <code>p</code> elements should not be modified.</li>
+                        <li>The <code>JSX</code> should use valid comment syntax.</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </article>
     <hr>
     <footer>
         <div class="container">
@@ -66,6 +81,7 @@
                         </a>
                     </ul>
                     <p class="text-muted copyright">Copyright © John Waz 2021</p>
+                    <p class="text-muted copyright credit">Credit <a class="link" href="https://www.freecodecamp.org" target="_blank"><span class="fcc">freeCodeCamp</span></a></p>
                 </div>
             </div>
         </div>
