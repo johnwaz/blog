@@ -46,6 +46,38 @@ code {
   color: silver;
 }
 
+.footer-pagination a {
+  font-size: .8em;
+  color: black;
+  float: left;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.footer-pagination a.active {
+  background-color: rgb(10, 50, 100);
+  color: white;
+}
+
+.footer-pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.footer-pagination a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.footer-pagination a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
 .link {
   color: blue;
   text-decoration: none;
