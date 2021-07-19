@@ -44,28 +44,28 @@
                 <form id="contactForm" name="sentMessage" novalidate="novalidate" action="https://formspree.io/f/xyyldnav" method="POST">
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
-                            <input class="form-control" type="text" id="name" required="" placeholder="Name">
+                            <input class="form-control" type="text" id="name" required="" placeholder="Name" name="name">
                             <label class="form-label" for="name">Name</label>
                             <small class="form-text text-danger help-block"></small>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
-                            <input class="form-control" type="email" id="email" required="" placeholder="Email Address">
+                            <input class="form-control" type="email" id="email" required="" placeholder="Email Address" name="email">
                             <label class="form-label">Email Address</label>
                             <small class="form-text text-danger help-block"></small>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
-                            <input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number">
+                            <input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number" name="phone">
                             <label class="form-label">Phone Number</label>
                             <small class="form-text text-danger help-block"></small>
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="form-floating controls mb-3">
-                            <textarea class="form-control" id="message" data-validation-required-message="Please enter a message." required="" placeholder="Message" style="height: 150px;"></textarea>
+                            <textarea class="form-control" id="message" data-validation-required-message="Please enter a message." required="" placeholder="Message" style="height: 150px;" name="message"></textarea>
                             <label class="form-label">Message</label>
                             <small class="form-text text-danger help-block"></small>
                         </div>
