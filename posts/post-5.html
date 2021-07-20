@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Add Comments in JSX</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <title>Render HTML Elements to the DOM</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="/https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
 </head>
 
 <body>
@@ -17,22 +17,22 @@
         <div class="container"><a class="navbar-brand" href="index.html">John Waz</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="post-5.html">Post</a></li>
                     <li class="nav-item"></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image:url('assets/img/blog-bg.jpg');">
+    <header class="masthead" style="background-image:url('/assets/img/blog-bg.jpg');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Add Comments in JSX</h1>
+                        <h1>Render HTML Elements to the DOM</h1>
                     </div>
                 </div>
             </div>
@@ -42,25 +42,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.<br></p>
-                    <p>To put comments inside JSX, you use the syntax <code>{/* */}</code> to wrap around the comment text.<br></p>
+                    <p>So far, you've learned that JSX is a convenient tool to write readable HTML within JavaScript. With React, we can render this JSX directly to the HTML DOM using React's rendering API known as ReactDOM.<br></p>
+                    <p>ReactDOM offers a simple method to render React elements to the DOM which looks like this: <code>ReactDOM.render(componentToRender, targetNode)</code>, where the first argument is the React element or component that you want to render, and the second argument is the DOM node that you want to render the component to.<br></p>
+                    <p>As you would expect, <code>ReactDOM.render()</code> must be called after the JSX element declarations, just like how you must declare variables before using them.<br></p>
                     <hr>
-                    <p>The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided <code>div</code> element, without modifying the existing <code>h1</code> or <code>p</code> elements.<br></p>
+                    <p>The code editor has a simple JSX component. Use the <code>ReactDOM.render()</code> method to render this component to the page. You can pass defined JSX elements directly in as the first argument and use <code>document.getElementById()</code> to select the DOM node to render them to. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use. Make sure you don't change the <code>JSX</code> constant.<br></p>
                     <div class="code">
-                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;This is a block of JSX&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Here's a subtitle&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
+                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Hello World&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Lets render this to the DOM&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);<br>&nbsp;// Change code below this line</code><br><br>
                     </div>
                     <hr>
                     <p class="solution">My Solution:</p>
                     <div class="code-sol">
-                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;This is a block of JSX&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;{/* This is a comment */}<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Here's a subtitle&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
+                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Hello World&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Lets render this to the DOM&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);<br>&nbsp;// Change code below this line<br>&nbsp;ReactDOM.render(JSX, document.getElementById('challenge-node'));</code><br>
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
                         <li>The constant <code>JSX</code> should return a <code>div</code> element.</li>
                         <li>The <code>div</code> should contain an <code>h1</code> tag as the first element.</li>
                         <li>The <code>div</code> should contain a <code>p</code> tag as the second element.</li>
-                        <li>The existing <code>h1</code> and <code>p</code> elements should not be modified.</li>
-                        <li>The <code>JSX</code> should use valid comment syntax.</li>
+                        <li>The provided JSX element should render to the DOM node with id <code>challenge-node</code>.</li>
                     </ul>
                 </div>
             </div>
@@ -76,9 +76,8 @@
                         <li class="list-inline-item"><a href="post-1.html">1</a></li>
                         <li class="list-inline-item"><a href="post-2.html">2</a></li>
                         <li class="list-inline-item"><a href="post-3.html">3</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-4.html">4</a></li>
-                        <li class="list-inline-item"><a href="post-5.html">5</a></li>
-                        <li class="list-inline-item"><a href="post-5.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-4.html">4</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-5.html">5</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
