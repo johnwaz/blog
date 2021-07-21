@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Add Comments in JSX</title>
+    <title>Define an HTML Class in JSX</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Add Comments in JSX</h1>
+                        <h1>Define an HTML Class in JSX</h1>
                     </div>
                 </div>
             </div>
@@ -41,25 +41,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.<br></p>
-                    <p>To put comments inside JSX, you use the syntax <code>{/* */}</code> to wrap around the comment text.<br></p>
+                    <p>Now that you're getting comfortable writing JSX, you may be wondering how it differs from HTML.<br></p>
+                    <p>So far, it may seem that HTML and JSX are exactly the same.<br></p>
+                    <p>One key difference in JSX is that you can no longer use the word <code>class</code> to define HTML classes. This is because <code>class</code> is a reserved word in JavaScript. Instead, JSX uses <code>className</code>.<br></p>
+                    <p>In fact, the naming convention for all HTML attributes and event references in JSX become camelCase. For example, a click event in JSX is <code>onClick</code>, instead of <code>onclick</code>. Likewise, <code>onchange</code> becomes <code>onChange</code>. While this is a subtle difference, it is an important one to keep in mind moving forward.<br></p>
                     <hr>
-                    <p>The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided <code>div</code> element, without modifying the existing <code>h1</code> or <code>p</code> elements.<br></p>
+                    <p>Apply a class of <code>myDiv</code> to the <code>div</code> provided in the JSX code.<br></p>
                     <div class="code">
-                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;This is a block of JSX&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Here's a subtitle&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code>
+                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Add a class to this div&lt;/h1&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
                     </div>
                     <hr>
                     <p class="solution">My Solution:</p>
                     <div class="code-sol">
-                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;This is a block of JSX&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;{/* This is a comment */}<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Here's a subtitle&lt;/p&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code>
+                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&nbsp;className="myDiv"&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Add a class to this div&lt;/h1&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
                         <li>The constant <code>JSX</code> should return a <code>div</code> element.</li>
-                        <li>The <code>div</code> should contain an <code>h1</code> tag as the first element.</li>
-                        <li>The <code>div</code> should contain a <code>p</code> tag as the second element.</li>
-                        <li>The existing <code>h1</code> and <code>p</code> elements should not be modified.</li>
-                        <li>The <code>JSX</code> should use valid comment syntax.</li>
+                        <li>The <code>div</code> should have a class of <code>myDiv</code>.</li>
                     </ul>
                 </div>
             </div>
@@ -71,9 +70,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-3.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-4.html">4</a></li>
-                        <li class="list-inline-item"><a href="post-5.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-5.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-6.html">6</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
