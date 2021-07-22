@@ -44,18 +44,20 @@
                     <p>One important thing to know about nested JSX is that it must return a single element.<br></p>
                     <p>This one parent element would wrap all of the other levels of nested elements.<br></p>
                     <p>For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.<br></p>
-                    <p>Here's an example:</p>
-                    <p><strong>Valid JSX:</strong></p>
+                    <p>Here's an example:<br></p>
+                    <p><strong>Valid JSX:</strong><br></p>
                     <div class="code-sol">
-                        <code class="code-sol">&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;<br>&nbsp;&nbsp; &lt;/div&gt;</code><br>
+                        <code class="code-sol">&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;<br>&nbsp;&nbsp; &lt;/div&gt;</code>
                     </div>
-                    <p><strong>Invalid JSX:</strong></p>
+                    <p><strong>Invalid JSX:</strong><br></p>
                     <div class="code">
-                        <code class="code">&nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;</code><br>
+                        <code class="code">&nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;</code>
                     </div>
                     <br>
                     <hr>
-                    <p>Define a new constant <code>JSX</code> that renders a <code>div</code> which contains the following elements in order:<br><br>An <code>h1</code>, a <code>p</code>, and an unordered list that contains three <code>li</code> items. You can include any text you want within each element.<br><br><strong>Note:</strong>&nbsp;When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a <code>div</code> tag to wrap all the child elements within a single parent element. If you remove the <code>div</code>, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.<br></p>
+                    <p>Define a new constant <code>JSX</code> that renders a <code>div</code> which contains the following elements in order:<br></p>
+                    <p>An <code>h1</code>, a <code>p</code>, and an unordered list that contains three <code>li</code> items. You can include any text you want within each element.<br></p>
+                    <p><strong>Note:</strong> When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a <code>div</code> tag to wrap all the child elements within a single parent element. If you remove the <code>div</code>, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.<br></p>
                     <hr>
                     <p class="solution">My Solution:</p>
                     <div class="code-sol">
