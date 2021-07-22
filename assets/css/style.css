@@ -8,6 +8,8 @@
 
 .checkmark li:before{
   content: '✓';
+  color: forestgreen;
+  font-weight: bold;
   margin-left: -30px;
   margin-right: 10px;
 }
