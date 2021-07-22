@@ -26,7 +26,7 @@ code {
   padding: 10px;
   overflow: auto;
   white-space: nowrap;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .code-sol {
@@ -34,12 +34,11 @@ code {
   padding: 10px;
   overflow: auto;
   white-space: nowrap;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .comment {
   color: #679267;
-  ;
 }
 
 .credit {
