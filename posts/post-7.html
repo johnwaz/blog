@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Define an HTML Class in JSX</title>
+    <title>Learn About Self-Closing JSX Tags</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Define an HTML Class in JSX</h1>
+                        <h1>Learn About Self-Closing JSX Tags</h1>
                     </div>
                 </div>
             </div>
@@ -41,24 +41,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>Now that you're getting comfortable writing JSX, you may be wondering how it differs from HTML.<br></p>
-                    <p>So far, it may seem that HTML and JSX are exactly the same.<br></p>
-                    <p>One key difference in JSX is that you can no longer use the word <code>class</code> to define HTML classes. This is because <code>class</code> is a reserved word in JavaScript. Instead, JSX uses <code>className</code>.<br></p>
-                    <p>In fact, the naming convention for all HTML attributes and event references in JSX become camelCase. For example, a click event in JSX is <code>onClick</code>, instead of <code>onclick</code>. Likewise, <code>onchange</code> becomes <code>onChange</code>. While this is a subtle difference, it is an important one to keep in mind moving forward.<br></p>
+                    <p>So far, you’ve seen how JSX differs from HTML in a key way with the use of <code>className</code> vs. <code>class</code> for defining HTML classes.<br></p>
+                    <p>Another important way in which JSX differs from HTML is in the idea of the self-closing tag.<br></p>
+                    <p>In HTML, almost all tags have both an opening and closing tag: <code>&lt;div&gt;&lt;/div&gt;</code>; the closing tag always has a forward slash before the tag name that you are closing. However, there are special instances in HTML called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start.<br></p>
+                    <p>For example the line-break tag can be written as <code>&lt;br&gt;</code> or as <code>&lt;br /&gt;</code>, but should never be written as <code>&lt;br&gt;&lt;/br&gt;</code>, since it doesn't contain any content.<br></p>
+                    <p>In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as <code>&lt;br /&gt;</code> in order to be valid JSX that can be transpiled. A <code>&lt;div&gt;</code>, on the other hand, can be written as <code>&lt;div /&gt;</code> or <code>&lt;div&gt;&lt;/div&gt;</code>. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering React components.<br></p>
                     <hr>
-                    <p>Apply a class of <code>myDiv</code> to the <code>div</code> provided in the JSX code.<br></p>
+                    <p>Fix the errors in the code editor so that it is valid JSX and successfully transpiles. Make sure you don't change any of the content - you only need to close tags where they are needed.<br></p>
                     <div class="code">
-                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Add a class to this div&lt;/h1&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
+                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h2&gt;Welcome to React!&lt;/h2&gt;&nbsp;&lt;br&nbsp;&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Be sure to close all tags!&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp;&lt;hr&nbsp;&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
                     </div>
                     <hr>
                     <p class="solution">My Solution:</p>
                     <div class="code-sol">
-                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&nbsp;className="myDiv"&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Add a class to this div&lt;/h1&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
+                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h2&gt;Welcome to React!&lt;/h2&gt;&nbsp;&lt;br&nbsp;/&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Be sure to close all tags!&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp;&lt;hr&nbsp;/&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code><br>
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
                         <li>The constant <code>JSX</code> should return a <code>div</code> element.</li>
-                        <li>The <code>div</code> should have a class of <code>myDiv</code>.</li>
+                        <li>The <code>div</code> should contain a <code>br</code> tag.</li>
+                        <li>The <code>div</code> should contain an <code>hr</code> tag.</li>
                     </ul>
                 </div>
             </div>
@@ -70,9 +72,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-5.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-6.html">6</a></li>
-                        <li class="list-inline-item"><a href="post-7.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-6.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-7.html">7</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
