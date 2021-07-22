@@ -14,8 +14,9 @@
 
 code {
   background-color: rgb(220, 220, 220);
-  color: black;
+  color: rgb(80, 80, 80);
   padding: 2px 4px;
+  font-size: 1em;
 }
 
 .code {
