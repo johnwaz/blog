@@ -33,6 +33,10 @@ code {
   white-space: nowrap;
 }
 
+.comment {
+  color: #228b22; /* forestgreen */
+}
+
 .credit {
   margin-top: 10px;
 }
