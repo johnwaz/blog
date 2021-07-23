@@ -23,18 +23,24 @@ code {
 
 .code {
   background-color: rgb(250, 230, 230);
+  color: rgb(80, 80, 80);
+  font-family: "consolas";
   padding: 10px;
   overflow: auto;
   white-space: nowrap;
-  line-height: 1.7;
 }
 
 .code-sol {
   background-color: rgb(230, 250, 230);
+  color: rgb(80, 80, 80);
+  font-family: "consolas";
   padding: 10px;
   overflow: auto;
   white-space: nowrap;
-  line-height: 1.7;
+}
+
+.code-sol p {
+  margin: 0 auto;
 }
 
 .comment {
