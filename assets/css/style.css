@@ -27,6 +27,8 @@ code {
 .code-red {
   background-color: rgb(250, 230, 230);
   padding: 0 10px;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .code {
@@ -43,6 +45,8 @@ code {
 .code-green {
   background-color: rgb(230, 250, 230);
   padding: 0 10px;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .code-sol {
