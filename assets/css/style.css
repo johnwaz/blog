@@ -30,7 +30,7 @@ code {
   white-space: nowrap;
 }
 
-@media (min-width: 100px) {
+@media (min-width: 320px) {
   .code {
     background-color: rgb(250, 230, 230);
     color: rgb(80, 80, 80);
@@ -50,7 +50,7 @@ code {
   white-space: nowrap;
 }
 
-@media (min-width: 100px) {
+@media (min-width: 320px) {
   .code-sol {
     background-color: rgb(230, 250, 230);
     color: rgb(80, 80, 80);
