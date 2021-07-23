@@ -48,13 +48,13 @@
                     <p>In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as <code>&lt;br /&gt;</code> in order to be valid JSX that can be transpiled. A <code>&lt;div&gt;</code>, on the other hand, can be written as <code>&lt;div /&gt;</code> or <code>&lt;div&gt;&lt;/div&gt;</code>. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering React components.<br></p>
                     <hr>
                     <p>Fix the errors in the code editor so that it is valid JSX and successfully transpiles. Make sure you don't change any of the content - you only need to close tags where they are needed.<br></p>
-                    <div class="code">
-                        <code class="code">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h2&gt;Welcome to React!&lt;/h2&gt;&nbsp;&lt;br&nbsp;&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Be sure to close all tags!&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp;&lt;hr&nbsp;&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code>
+                    <div class="code-red">
+                        <code class="code"><p>&nbsp;const JSX = (&nbsp;</p><p>&nbsp;&nbsp; &lt;div&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;h2&gt;Welcome to React!&lt;/h2&gt;&nbsp;&lt;br&nbsp;&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;p&gt;Be sure to close all tags!&lt;/p&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;hr&nbsp;&gt;&nbsp;</p><p>&nbsp; &nbsp;&lt;/div&gt;&nbsp;</p><p>&nbsp;);&nbsp;</p></code>
                     </div>
                     <hr>
                     <p class="solution">My Solution:</p>
-                    <div class="code-sol">
-                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h2&gt;Welcome to React!&lt;/h2&gt;&nbsp;&lt;br&nbsp;/&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;Be sure to close all tags!&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp;&lt;hr&nbsp;/&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code>
+                    <div class="code-green">
+                        <code class="code-sol"><p>&nbsp;const JSX = (&nbsp;</p><p>&nbsp;&nbsp; &lt;div&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;h2&gt;Welcome to React!&lt;/h2&gt;&nbsp;&lt;br&nbsp;/&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;p&gt;Be sure to close all tags!&lt;/p&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;hr&nbsp;/&gt;&nbsp;</p><p>&nbsp; &nbsp;&lt;/div&gt;&nbsp;</p><p>&nbsp;);&nbsp;</p></code>
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
