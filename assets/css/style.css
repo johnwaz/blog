@@ -18,7 +18,7 @@ code {
   background-color: rgb(220, 220, 220);
   color: rgb(80, 80, 80);
   padding: 1px 4px;
-  font-size: 1em;
+  font-size: inherit;
 }
 
 .code {
@@ -30,6 +30,17 @@ code {
   white-space: nowrap;
 }
 
+@media (min-width: 100px) {
+  .code {
+    background-color: rgb(250, 230, 230);
+    color: rgb(80, 80, 80);
+    font-family: "consolas";
+    padding: 10px;
+    overflow: auto;
+    white-space: nowrap;
+  }
+}
+
 .code-sol {
   background-color: rgb(230, 250, 230);
   color: rgb(80, 80, 80);
@@ -37,6 +48,17 @@ code {
   padding: 10px;
   overflow: auto;
   white-space: nowrap;
+}
+
+@media (min-width: 100px) {
+  .code-sol {
+    background-color: rgb(230, 250, 230);
+    color: rgb(80, 80, 80);
+    font-family: "consolas";
+    padding: 10px;
+    overflow: auto;
+    white-space: nowrap;
+  }
 }
 
 .code-sol p {
