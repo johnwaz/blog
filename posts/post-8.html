@@ -45,7 +45,13 @@
                     <p>There are two ways to create a React component. The first way is to use a JavaScript function. Defining a component in this way creates a stateless functional component. The concept of state in an application will be covered in later challenges. For now, think of a stateless component as one that can receive data and render it, but does not manage or track changes to that data. (We'll cover the second way to create a React component in the next challenge.)<br></p>
                     <p>To create a component with a function, you simply write a JavaScript function that returns either JSX or <code>null</code>. One important thing to note is that React requires your function name to begin with a capital letter. Here's an example of a stateless functional component that assigns an HTML class in JSX:<br></p>
                     <div class="code-green">
-                        <code class="code-sol"><p>&nbsp;const DemoComponent = function() {</p><p>&nbsp; &nbsp;return (</p><p>&nbsp; &nbsp; &nbsp;&lt;div className='customClass' /&gt;</p><p>&nbsp;&nbsp; );</p><p>&nbsp;};</p></code>
+                        <code class="code-sol">
+                            <p>&nbsp;const DemoComponent = function() {&nbsp;</p>
+                            <p>&nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;&lt;div className='customClass' /&gt;&nbsp;</p>
+                            <p>&nbsp;&nbsp; );&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                        </code>
                     </div>
                     <p>After being transpiled, the <code>&lt;div&gt;</code> will have a CSS class of <code>customClass</code>.<br></p>
                     <p>Because a JSX component represents HTML, you could put several components together to create a more complex HTML page. This is one of the key advantages of the component architecture React provides. It allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.<br></p>
@@ -53,14 +59,26 @@
                     <p>The code editor has a function called <code>MyComponent</code>. Complete this function so it returns a single <code>div</code> element which contains some string of text.<br></p>
                     <p><strong>Note:</strong> The text is considered a child of the div element, so you will not be able to use a self-closing tag.<br></p>
                     <div class="code-red">
-                        <code class="code"><p>&nbsp;const MyComponent = function() {</p><p>&nbsp;&nbsp; <span class="comment">// Change code below this line</span></p><br><br><p>&nbsp;&nbsp; <span class="comment">// Change code above this line</span></p><p>&nbsp;}</p></code>
+                        <code class="code">
+                            <p>&nbsp;const MyComponent = function() {&nbsp;</p>
+                            <p>&nbsp; &nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p><br><br>
+                            <p>&nbsp; &nbsp;<span class="comment">// Change code above this line</span>&nbsp;</p>
+                            <p>&nbsp;}&nbsp;</p>
+                        </code>
                     </div>
                     <hr>
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
-                        <code class="code-sol"><p>&nbsp;const MyComponent = function() {</p><p>&nbsp;&nbsp; <span class="comment">// Change code below this line</span></p><p>&nbsp; &nbsp;return (</p><p>&nbsp;&nbsp; &nbsp; &lt;div&gt;Some string of text&lt;/div&gt;</p><p>&nbsp; &nbsp;);</p><p>&nbsp;&nbsp; <span class="comment">// Change code above this line</span></p><p>&nbsp;}</p></code>
+                        <code class="code-sol">
+                            <p>&nbsp;const MyComponent = function() {&nbsp;</p>
+                            <p>&nbsp; &nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
+                            <p>&nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;Some string of text&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;<span class="comment">// Change code above this line</span>&nbsp;</p>
+                            <p>&nbsp;}&nbsp;</p>
+                        </code>
                     </div>
-                    
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
                         <li><code>MyComponent</code> should return JSX.</li>
