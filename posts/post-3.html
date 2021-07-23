@@ -46,12 +46,12 @@
                     <p>For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.<br></p>
                     <p>Here's an example:<br></p>
                     <p><strong>Valid JSX:</strong><br></p>
-                    <div class="code-sol">
-                        <code class="code-sol">&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;<br>&nbsp;&nbsp; &lt;/div&gt;</code>
+                    <div class="code-green">
+                        <code class="code-sol"><p>&nbsp;&nbsp; &lt;div&gt;&nbsp;</p><p>&nbsp;&nbsp; &nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;&nbsp;</p><p>&nbsp;&nbsp; &nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;&nbsp;</p><p>&nbsp;&nbsp; &nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;&nbsp;</p><p>&nbsp;&nbsp; &lt;/div&gt;&nbsp;</p></code>
                     </div>
                     <p><strong>Invalid JSX:</strong><br></p>
-                    <div class="code">
-                        <code class="code">&nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp;&nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;</code>
+                    <div class="code-red">
+                        <code class="code"><p>&nbsp;&nbsp; &lt;p&gt;Paragraph One&lt;/p&gt;&nbsp;</p><p>&nbsp;&nbsp; &lt;p&gt;Paragraph Two&lt;/p&gt;&nbsp;</p><p>&nbsp;&nbsp; &lt;p&gt;Paragraph Three&lt;/p&gt;&nbsp;</p></code>
                     </div>
                     <br>
                     <hr>
@@ -60,8 +60,8 @@
                     <p><strong>Note:</strong> When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a <code>div</code> tag to wrap all the child elements within a single parent element. If you remove the <code>div</code>, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.<br></p>
                     <hr>
                     <p class="solution">My Solution:</p>
-                    <div class="code-sol">
-                        <code class="code-sol">const JSX = (<br>&nbsp;&nbsp; &lt;div&gt;<br>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Hello&lt;/h1&gt;<br>&nbsp; &nbsp; &nbsp;&lt;p&gt;These are some of the guitars that I own&lt;/p&gt;<br>&nbsp; &nbsp; &nbsp;&lt;ul&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Vintage Modified Electric&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Acoustic/Electric&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Jazz Bass&lt;/li&gt;<br>&nbsp; &nbsp; &nbsp;&lt;/ul&gt;<br>&nbsp; &nbsp;&lt;/div&gt;<br>&nbsp;);</code>
+                    <div class="code-green">
+                        <code class="code-sol"><p>&nbsp;const JSX = (&nbsp;</p><p>&nbsp;&nbsp; &lt;div&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;h1&gt;Hello&lt;/h1&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;p&gt;These are some of the guitars that I own&lt;/p&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;ul&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Vintage Modified Electric&lt;/li&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Acoustic/Electric&lt;/li&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Fender Jazz Bass&lt;/li&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp;&lt;/ul&gt;&nbsp;</p><p>&nbsp; &nbsp;&lt;/div&gt;&nbsp;</p><p>&nbsp;);&nbsp;</p></code>
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
