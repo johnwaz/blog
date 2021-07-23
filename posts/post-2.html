@@ -49,13 +49,19 @@
                     <hr>
                     <p>The current code uses JSX to assign a <code>div</code> element to the constant <code>JSX</code>. Replace the <code>div</code> with an <code>h1</code> element and add the text <code>Hello JSX!</code> inside it.<br></p>
                     <div class="code-red">
-                        <code class="code"><p>&nbsp;const JSX = &lt;div&gt;&lt;/div&gt;;&nbsp;</p></code>
+                        <code class="code">
+                            <p>&nbsp;const JSX = &lt;div&gt;&lt;/div&gt;;&nbsp;</p>
+                        </code>
                     </div>
                     <hr>
                     <p class="solution">My Solution:</p>
-                    <section class="code-green">
-                        <code class="code-sol"><p>&nbsp;const JSX = (</p><p>&nbsp;&nbsp; &lt;h1&gt;Hello JSX!&lt;/h1&gt;</p><p>&nbsp;);&nbsp;</p></code>
-                    </section>
+                    <div class="code-green">
+                        <code class="code-sol">
+                            <p>&nbsp;const JSX = (&nbsp;</p>
+                            <p>&nbsp; &nbsp;&lt;h1&gt;Hello JSX!&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp;);&nbsp;</p>
+                        </code>
+                    </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
                         <li>The constant <code>JSX</code> should return an <code>h1</code> element.</li>
