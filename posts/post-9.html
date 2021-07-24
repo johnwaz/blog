@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Create a React Component</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="..index.html">John Waz</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('../assets/img/blog-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="post-heading">
+                        <h1>Create a React Component</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <p>The other way to define a React component is with the ES6 <code>class</code> syntax. In the following example, <code>Kitten</code> extends <code>React.Component</code>:<br></p>
+                    <div class="code-green">
+                        <code class="code-sol">
+                            <p>&nbsp;class Kitten extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;Hi&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;}&nbsp;</p>
+                        </code>
+                    </div>
+                    <p>This creates an ES6 class <code>Kitten</code> which extends the <code>React.Component</code> class. So the <code>Kitten</code> class now has access to many useful React features, such as local state and lifecycle hooks. Don't worry if you aren't familiar with these terms yet, they will be covered in greater detail in later challenges. Also notice the <code>Kitten</code> class has a <code>constructor</code> defined within it that calls <code>super()</code>. It uses <code>super()</code> to call the constructor of the parent class, in this case <code>React.Component</code>. The constructor is a special method used during the initialization of objects that are created with the <code>class</code> keyword. It is best practice to call a component's <code>constructor</code> with <code>super</code>, and pass <code>props</code> to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as <code>props</code>.<br></p>
+                    <hr>
+                    <p><code>MyComponent</code> is defined in the code editor using class syntax. Finish writing the <code>render</code> method so it returns a <code>div</code> element that contains an <code>h1</code> with the text <code>Hello React!</code>.<br></p>
+                    <div class="code-red">
+                        <code class="code">
+                            <p>&nbsp;class MyComponent extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Change code above this line</span>&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                        </code>
+                    </div>
+                    <hr>
+                    <p class="solution">My Solution:</p>
+                    <div class="code-green">
+                        <code class="code-sol">
+                            <p>&nbsp;class MyComponent extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;Hello React!&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Change code above this line</span>&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                        </code>
+                    </div>
+                    <p class="solution">Tests:</p>
+                    <ul class="mb-0 checkmark">
+                        <li>The React component should return a <code>div</code> element.</li>
+                        <li>The returned <code>div</code> should render an <code>h1</code> header within it.</li>
+                        <li>The <code>h1</code> header should contain the string <code>Hello React!</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item"><a href="post-8.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-9.html">9</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <ul class="list-inline text-center">
+                        <a href="https://www.linkedin.com/in/john-wasielewicz" target="_blank">
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-star fab fa-linkedin fa-2x"></i></span></li>
+                        </a>
+                        <li class="list-inline-item"></li>
+                        <a href="https://github.com/johnwaz" target="_blank">
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-star fab fa-github-square fa-2x"></i></span></li>
+                        </a>
+                    </ul>
+                    <p class="text-muted copyright">Copyright © John Waz 2021</p>
+                    <p class="text-muted copyright credit">Credit <a class="link" href="https://www.freecodecamp.org" target="_blank"><span class="fcc">freeCodeCamp</span></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/clean-blog.js"></script>
+</body>
+
+</html>
