@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Create a Component with Composition</title>
+    <title>Use React to Render Nested Components</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Create a Component with Composition</h1>
+                        <h1>Use React to Render Nested Components</h1>
                     </div>
                 </div>
             </div>
@@ -41,43 +41,46 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>Now we will look at how we can compose multiple React components together. Imagine you are building an app and have created three components: a <code>Navbar</code>, <code>Dashboard</code>, and <code>Footer</code>.<br></p>
-                    <p>To compose these components together, you could create an <code>App</code> <em>parent</em> component which renders each of these three components as <em>children</em>. To render a component as a child in a React component, you include the component name written as a custom HTML tag in the JSX. For example, in the <code>render</code> method you could write:<br></p>
-                    <div class="code-green">
-                        <code class="code-sol">
-                            <p>&nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &lt;App&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;&lt;Navbar /&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;&lt;Dashboard /&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;&lt;Footer /&gt;&nbsp;</p>
-                            <p>&nbsp; &lt;/App&gt;&nbsp;</p>
-                            <p>&nbsp;)&nbsp;</p>
-                        </code>
-                    </div>
-                    <p>When React encounters a custom HTML tag that references another component (a component name wrapped in <code>&lt; /&gt;</code> like in this example), it renders the markup for that component in the location of the tag. This should illustrate the parent/child relationship between the <code>App</code> component and the <code>Navbar</code>, <code>Dashboard</code>, and <code>Footer</code>.<br></p>
+                    <p>The last challenge showed a simple way to compose two components, but there are many different ways you can compose components with React.<br></p>
+                    <p>Component composition is one of React's powerful features. When you work with React, it is important to start thinking about your user interface in terms of components like the App example in the last challenge. You break down your UI into its basic building blocks, and those pieces become the components. This helps to separate the code responsible for the UI from the code responsible for handling your application logic. It can greatly simplify the development and maintenance of complex projects.<br></p>
                     <hr>
-                    <p>In the code editor, there is a simple functional component called <code>ChildComponent</code> and a class component called <code>ParentComponent</code>. Compose the two together by rendering the <code>ChildComponent</code> within the <code>ParentComponent</code>. Make sure to close the <code>ChildComponent</code> tag with a forward slash.<br></p>
-                    <p><strong>Note:</strong> <code>ChildComponent</code> is defined with an ES6 arrow function because this is a very common practice when using React. However, know that this is just a function. If you aren't familiar with the arrow function syntax, please refer to the JavaScript section.<br></p>
+                    <p>There are two functional components defined in the code editor, called <code>TypesOfFruit</code> and <code>Fruits</code>. Take the <code>TypesOfFruit</code> component and compose it, or <em>nest</em> it, within the <code>Fruits</code> component. Then take the <code>Fruits</code> component and nest it within the <code>TypesOfFood</code> component. The result should be a child component, nested within a parent component, which is nested within a parent component of its own!<br></p>
                     <div class="code-red">
                         <code class="code">
-                            <p>&nbsp;const ChildComponent = () => {&nbsp;</p>
+                            <p>&nbsp;const TypesOfFruit = () => {&nbsp;</p>
                             <p>&nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;I am the child&lt;/p&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Fruits:&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;ul&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Apples&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Blueberries&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Strawberries&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Bananas&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/ul&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;class ParentComponent extends React.Component {&nbsp;</p>
+                            <p>&nbsp;const Fruits = () => {&nbsp;</p>
+                            <p>&nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;class TypesOfFood extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;I am the parent&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;Types of Food:&lt;/h1&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
@@ -90,24 +93,41 @@
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;const ChildComponent = () => {&nbsp;</p>
+                            <p>&nbsp;const TypesOfFruit = () => {&nbsp;</p>
                             <p>&nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;I am the child&lt;/p&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Fruits:&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;ul&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Apples&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Blueberries&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Strawberries&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Bananas&lt;/li&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/ul&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;class ParentComponent extends React.Component {&nbsp;</p>
+                            <p>&nbsp;const Fruits = () => {&nbsp;</p>
+                            <p>&nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;TypesOfFruit /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;class TypesOfFood extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;I am the parent&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;Types of Food:&lt;/h1&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;ChildComponent /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Fruits /&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
@@ -117,9 +137,10 @@
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
-                        <li>The React component should return a single <code>div</code> element.</li>
-                        <li>The component should return two nested elements.</li>
-                        <li>The component should return the <code>ChildComponent</code> as its second child.</li>
+                        <li>The <code>TypesOfFood</code> component should return a single <code>div</code> element.</li>
+                        <li>The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.</li>
+                        <li>The <code>Fruits</code> component should return the <code>TypesOfFruit</code> component.</li>
+                        <li>The <code>TypesOfFruit</code> component should return the <code>h2</code> and <code>ul</code> elements.</li>
                     </ul>
                 </div>
             </div>
@@ -131,9 +152,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-9.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-10.html">10</a></li>
-                        <li class="list-inline-item"><a href="post-11.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-10.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-11.html">11</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
