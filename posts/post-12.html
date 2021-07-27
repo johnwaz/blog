@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Use React to Render Nested Components</title>
+    <title>Compose React Components</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Use React to Render Nested Components</h1>
+                        <h1>Compose React Components</h1>
                     </div>
                 </div>
             </div>
@@ -41,41 +41,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>The last challenge showed a simple way to compose two components, but there are many different ways you can compose components with React.<br></p>
-                    <p>Component composition is one of React's powerful features. When you work with React, it is important to start thinking about your user interface in terms of components like the App example in the last challenge. You break down your UI into its basic building blocks, and those pieces become the components. This helps to separate the code responsible for the UI from the code responsible for handling your application logic. It can greatly simplify the development and maintenance of complex projects.<br></p>
+                    <p>As the challenges continue to use more complex compositions with React components and JSX, there is one important point to note. Rendering ES6 style class components within other components is no different than rendering the simple components you used in the last few challenges. You can render JSX elements, stateless functional components, and ES6 class components within other components.<br></p>
                     <hr>
-                    <p>There are two functional components defined in the code editor, called <code>TypesOfFruit</code> and <code>Fruits</code>. Take the <code>TypesOfFruit</code> component and compose it, or <em>nest</em> it, within the <code>Fruits</code> component. Then take the <code>Fruits</code> component and nest it within the <code>TypesOfFood</code> component. The result should be a child component, nested within a parent component, which is nested within a parent component of its own!<br></p>
+                    <p>In the code editor, the <code>TypesOfFood</code> component is already rendering a component called <code>Vegetables</code>. Also, there is the <code>Fruits</code> component from the last challenge.<br></p>
+                    <p>Nest two components inside of <code>Fruits</code> — first <code>NonCitrus</code>, and then <code>Citrus</code>. Both of these components are provided for you behind the scenes. Next, nest the <code>Fruits</code> class component into the <code>TypesOfFood</code> component, below the <code>h1</code> header and above <code>Vegetables</code>. The result should be a series of nested components, which uses two different component types.<br></p>
                     <div class="code-red">
                         <code class="code">
-                            <p>&nbsp;const TypesOfFruit = () => {&nbsp;</p>
-                            <p>&nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Fruits:&lt;/h2&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;ul&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Apples&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Blueberries&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Strawberries&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Bananas&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/ul&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;);&nbsp;</p>
-                            <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;class Fruits extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Fruits:&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;const Fruits = () => {&nbsp;</p>
-                            <p>&nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;class TypesOfFood extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
@@ -83,6 +74,7 @@
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Vegetables /&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
@@ -93,35 +85,27 @@
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;const TypesOfFruit = () => {&nbsp;</p>
-                            <p>&nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Fruits:&lt;/h2&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;ul&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Apples&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Blueberries&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Strawberries&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li&gt;Bananas&lt;/li&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/ul&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;);&nbsp;</p>
-                            <p>&nbsp;};&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp;const Fruits = () => {&nbsp;</p>
-                            <p>&nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;TypesOfFruit /&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp;class Fruits extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Fruits:&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;NonCitrus /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Citrus /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;class TypesOfFood extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
@@ -129,6 +113,7 @@
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Fruits /&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Vegetables /&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
@@ -139,8 +124,8 @@
                     <ul class="mb-0 checkmark">
                         <li>The <code>TypesOfFood</code> component should return a single <code>div</code> element.</li>
                         <li>The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.</li>
-                        <li>The <code>Fruits</code> component should return the <code>TypesOfFruit</code> component.</li>
-                        <li>The <code>TypesOfFruit</code> component should return the <code>h2</code> and <code>ul</code> elements.</li>
+                        <li>The <code>Fruits</code> component should return the <code>NonCitrus</code> component and the <code>Citrus</code> component.</li>
+                        <li>The <code>TypesOfFood</code> component should return the <code>Vegetables</code> component below the <code>Fruits</code> component.</li>
                     </ul>
                 </div>
             </div>
@@ -152,9 +137,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-10.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-11.html">11</a></li>
-                        <li class="list-inline-item"><a href="post-12.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-11.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-12.html">12</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
