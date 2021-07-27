@@ -30,7 +30,8 @@ code {
 
 .code {
   background-color: rgb(250, 230, 230);
-  color: rgb(80, 80, 80);
+  color: rgb(60, 60, 60);
+  font-size: 19px;
   margin: 0;
   padding: 0;
   overflow: auto;
@@ -50,7 +51,8 @@ code {
 
 .code-sol {
   background-color: rgb(230, 250, 230);
-  color: rgb(80, 80, 80);
+  color: rgb(60, 60, 60);
+  font-size: 19px;
   margin: 0;
   padding: 0;
   overflow: auto;
@@ -62,7 +64,7 @@ code {
 }
 
 .comment {
-  color: #679267;
+  color: green;
 }
 
 .credit {
