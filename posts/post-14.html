@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Render a Class Component to the DOM</title>
+    <title>Write a React Component from Scratch</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Render a Class Component to the DOM</h1>
+                        <h1>Write a React Component from Scratch</h1>
                     </div>
                 </div>
             </div>
@@ -41,29 +41,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>You may remember using the ReactDOM API in an earlier challenge to render JSX elements to the DOM. The process for rendering React components will look very similar. The past few challenges focused on components and composition, so the rendering was done for you behind the scenes. However, none of the React code you write will render to the DOM without making a call to the ReactDOM API.<br></p>
-                    <p>Here's a refresher on the syntax: <code>ReactDOM.render(componentToRender, targetNode)</code>. The first argument is the React component that you want to render. The second argument is the DOM node that you want to render that component within.<br></p>
-                    <p>React components are passed into <code>ReactDOM.render()</code> a little differently than JSX elements. For JSX elements, you pass in the name of the element that you want to render. However, for React components, you need to use the same syntax as if you were rendering a nested component, for example<br><code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code>. You use this syntax for both ES6 class components and functional components.<br></p>
+                    <p>Now that you've learned the basics of JSX and React components, it's time to write a component on your own. React components are the core building blocks of React applications so it's important to become very familiar with writing them. Remember, a typical React component is an ES6 <code>class</code> which extends <code>React.Component</code>. It has a render method that returns HTML (from JSX) or <code>null</code>. This is the basic form of a React component. Once you understand this well, you will be prepared to start building more complex React projects.<br></p>
                     <hr>
-                    <p>Both the <code>Fruits</code> and <code>Vegetables</code> components are defined for you behind the scenes. Render both components as children of the <code>TypesOfFood</code> component, then render <code>TypesOfFood</code> to the DOM. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use.<br></p>
+                    <p>Define a class <code>MyComponent</code> that extends <code>React.Component</code>. Its render method should return a <code>div</code> that contains an <code>h1</code> tag with the text: <code>My First React Component!</code> in it. Use this text exactly, the case and punctuation matter. Make sure to call the constructor for your component, too.<br></p>
+                    <p>Render this component to the DOM using <code>ReactDOM.render()</code>. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use.<br></p>
                     <div class="code-red">
                         <code class="code">
-                            <p>&nbsp;class TypesOfFood extends React.Component {&nbsp;</p>
-                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
-                            <p>&nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;Types of Food:&lt;/h1&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
-                            <p>&nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp;};&nbsp;</p>
-                            <p>&nbsp;</p>
                             <p>&nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
                             <p>&nbsp;</p>
                         </code>
@@ -72,33 +55,29 @@
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;class TypesOfFood extends React.Component {&nbsp;</p>
+                            <p>&nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
+                            <p>&nbsp;class MyComponent extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;Types of Food:&lt;/h1&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Fruits /&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Vegetables /&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;My First React Component!&lt;/h1&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
-                            <p>&nbsp;ReactDOM.render(&lt;TypesOfFood /&gt;, document.getElementById('challenge-node'));&nbsp;</p>
+                            <p>&nbsp;ReactDOM.render(&lt;MyComponent /&gt;, document.getElementById('challenge-node'));&nbsp;</p>
                         </code>
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
-                        <li>The <code>TypesOfFood</code> component should return a single <code>div</code> element.</li>
-                        <li>The <code>TypesOfFood</code> component should render the <code>Fruits</code> component after the <code>h1</code> element.</li>
-                        <li>The <code>TypesOfFood</code> component should render the <code>Vegetables</code> component after <code>Fruits</code>.</li>
-                        <li>The <code>TypesOfFood</code> component should render to the DOM within the <code>div</code> with the id <code>challenge-node</code>.</li>
+                        <li>There should be a React component called <code>MyComponent</code>.</li>
+                        <li><code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.</li>
+                        <li><code>MyComponent</code> should render to the DOM.</li>
+                        <li><code>MyComponent</code> should have a constructor calling <code>super</code> with <code>props</code>.</li>
                     </ul>
                 </div>
             </div>
@@ -110,9 +89,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-12.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-13.html">13</a></li>
-                        <li class="list-inline-item"><a href="post-14.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-13.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-14.html">14</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
