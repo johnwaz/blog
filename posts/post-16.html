@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Pass Props to a Stateless Functional Component</title>
+    <title>Pass an Array as Props</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Pass Props to a Stateless Functional Component</h1>
+                        <h1>Pass an Array as Props</h1>
                     </div>
                 </div>
             </div>
@@ -41,45 +41,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>The previous challenges covered a lot about creating and composing JSX elements, functional components, and ES6 style class components in React. With this foundation, it's time to look at another feature very common in React: <strong>props</strong>. In React, you can pass props, or properties, to child components. Say you have an <code>App</code> component which renders a child component called <code>Welcome</code> which is a stateless functional component. You can pass <code>Welcome</code> a <code>user</code> property by writing:<br></p>
+                    <p>The last challenge demonstrated how to pass information from a parent component to a child component as <code>props</code> or properties. This challenge looks at how arrays can be passed as <code>props</code>. To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.<br></p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;&lt;App&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;&lt;Welcome user='Mark' /&gt;&nbsp;</p>
-                            <p>&nbsp;&lt;/App&gt;&nbsp;</p>
+                            <p>&nbsp;&lt;ParentComponent&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp;&lt;ChildComponent colors={["green", "blue", "red"]} /&gt;&nbsp;</p>
+                            <p>&nbsp;&lt;/ParentComponent&gt;&nbsp;</p>
                         </code>
                     </div>
-                    <p>You use <strong>custom HTML attributes</strong> created by you and supported by React to be passed to the component. In this case, the created property <code>user</code> is passed to the component <code>Welcome</code>. Since <code>Welcome</code> is a stateless functional component, it has access to this value like so:<br></p>
-                    <div class="code-green">
-                        <code class="code-sol">
-                            <p>&nbsp;const Welcome = (props) => &lt;h1&gt;Hello, {props.user}!&lt;/h1&gt;&nbsp;</p>
-                        </code>
-                    </div>
-                    <p>It is standard to call this value <code>props</code> and when dealing with stateless functional components, you basically consider it as an argument to a function which returns JSX. You can access the value of the argument in the function body. With class components, you will see this is a little different.<br></p>
+                    <p>The child component then has access to the array property <code>colors</code>. Array methods such as <code>join()</code> can be used when accessing the property. <code>const ChildComponent = (props) =&gt; &lt;p&gt;{props.colors.join(', ')}&lt;/p&gt;</code> This will join all <code>colors</code> array items into a comma separated string and produce: <code>&lt;p&gt;green, blue, red&lt;/p&gt;</code> Later, we will learn about other common methods to render arrays of data in React.<br></p>
                     <hr>
-                    <p>There are <code>Calendar</code> and <code>CurrentDate</code> components in the code editor. When rendering <code>CurrentDate</code> from the <code>Calendar</code> component, pass in a property of <code>date</code> assigned to the current date from JavaScript's <code>Date</code> object. Then access this <code>prop</code> in the <code>CurrentDate</code> component, showing its value within the <code>p</code> tags. Note that for <code>prop</code> values to be evaluated as JavaScript, they must be enclosed in curly brackets, for instance <code>date={Date()}</code>.<br></p>
+                    <p>There are <code>List</code> and <code>ToDo</code> components in the code editor. When rendering each <code>List</code> from the <code>ToDo</code> component, pass in a <code>tasks</code> property assigned to an array of to-do tasks, for example <code>["walk dog", "workout"]</code>. Then access this <code>tasks</code> array in the <code>List</code> component, showing its value within the <code>p</code> element. Use <code>join(", ")</code> to display the <code>props.tasks</code> array in the <code>p</code> element as a comma separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.<br></p>
                     <div class="code-red">
                         <code class="code">
-                            <p>&nbsp;const CurrentDate = (props) => {&nbsp;</p>
-                            <p>&nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;The current date is: &lt;/p&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp;const List = (props) => {&nbsp;</p>
+                            <p>&nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp;return &lt;p&gt;{}&lt;/p&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;class Calendar extends React.Component {&nbsp;</p>
+                            <p>&nbsp;class ToDo extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;What date is it?&lt;/h3&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;To Do Lists&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Today&lt;/h2&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;CurrentDate /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;List/&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Tomorrow&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;List/&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
@@ -91,26 +84,25 @@
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;const CurrentDate = (props) => {&nbsp;</p>
-                            <p>&nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;The current date is: {props.date}&lt;/p&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp;const List = (props) => {&nbsp;</p>
+                            <p>&nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp;return &lt;p&gt;{props.tasks.join(', ')}&lt;/p&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;class Calendar extends React.Component {&nbsp;</p>
+                            <p>&nbsp;class ToDo extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;What date is it?&lt;/h3&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;To Do Lists&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Today&lt;/h2&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;CurrentDate date={Date()} /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;List tasks={["code", "learn"]} /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Tomorrow&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;List tasks={["learn", "code", "workout"]} /&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
@@ -120,12 +112,13 @@
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
-                        <li>The <code>Calendar</code> component should return a single <code>div</code> element.</li>
-                        <li>The second child of the <code>Calendar</code> component should be the <code>CurrentDate</code> component.</li>
-                        <li>The <code>CurrentDate</code> component should have a prop called <code>date</code>.</li>
-                        <li>The <code>date</code> prop of the <code>CurrentDate</code> should contain a string of text.</li>
-                        <li>The <code>date</code> prop should be generated by calling <code>Date()</code>.</li>
-                        <li>The <code>CurrentDate</code> component should render the value from the <code>date</code> prop in the <code>p</code> tag.</li>
+                        <li>The <code>ToDo</code> component should return a single outer <code>div</code>.</li>
+                        <li>The third child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.</li>
+                        <li>The fifth child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.</li>
+                        <li>Both instances of the <code>List</code> component should have a property called <code>tasks</code> and <code>tasks</code> should be of type array.</li>
+                        <li>The first <code>List</code> component representing the tasks for today should have 2 or more items.</li>
+                        <li>The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.</li>
+                        <li>The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag.</li>
                     </ul>
                 </div>
             </div>
@@ -137,9 +130,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-14.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-15.html">15</a></li>
-                        <li class="list-inline-item"><a href="post-16.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-15.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-16.html">16</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
