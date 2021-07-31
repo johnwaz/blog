@@ -52,7 +52,7 @@
                     <p>You use <strong>custom HTML attributes</strong> created by you and supported by React to be passed to the component. In this case, the created property <code>user</code> is passed to the component <code>Welcome</code>. Since <code>Welcome</code> is a stateless functional component, it has access to this value like so:<br></p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;const Welcome = (props) => &lt;h1&gt;Hello, {props.user}!&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp;const Welcome = (props) =&gt; &lt;h1&gt;Hello, {props.user}!&lt;/h1&gt;&nbsp;</p>
                         </code>
                     </div>
                     <p>It is standard to call this value <code>props</code> and when dealing with stateless functional components, you basically consider it as an argument to a function which returns JSX. You can access the value of the argument in the function body. With class components, you will see this is a little different.<br></p>
@@ -60,7 +60,7 @@
                     <p>There are <code>Calendar</code> and <code>CurrentDate</code> components in the code editor. When rendering <code>CurrentDate</code> from the <code>Calendar</code> component, pass in a property of <code>date</code> assigned to the current date from JavaScript's <code>Date</code> object. Then access this <code>prop</code> in the <code>CurrentDate</code> component, showing its value within the <code>p</code> tags. Note that for <code>prop</code> values to be evaluated as JavaScript, they must be enclosed in curly brackets, for instance <code>date={Date()}</code>.<br></p>
                     <div class="code-red">
                         <code class="code">
-                            <p>&nbsp;const CurrentDate = (props) => {&nbsp;</p>
+                            <p>&nbsp;const CurrentDate = (props) =&gt; {&nbsp;</p>
                             <p>&nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
@@ -91,7 +91,7 @@
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;const CurrentDate = (props) => {&nbsp;</p>
+                            <p>&nbsp;const CurrentDate = (props) =&gt; {&nbsp;</p>
                             <p>&nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
