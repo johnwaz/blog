@@ -22,14 +22,14 @@ code {
 }
 
 .code-ex {
-  background-color: rgb(250, 250, 230);
+  background-color: rgb(230, 250, 250);
   padding: 10px;
   overflow: auto;
   white-space: nowrap;
 }
 
 .code-ex-data {
-  background-color: rgb(250, 250, 230);
+  background-color: rgb(230, 250, 250);
   color: #212529;
   font-size: 19px;
   margin: 0;
@@ -43,14 +43,14 @@ code {
 }
 
 .code-red {
-  background-color: rgb(250, 230, 230);
+  background-color: rgb(250, 250, 230);
   padding: 10px;
   overflow: auto;
   white-space: nowrap;
 }
 
 .code {
-  background-color: rgb(250, 230, 230);
+  background-color: rgb(250, 250, 230);
   color: #212529;
   font-size: 19px;
   margin: 0;
