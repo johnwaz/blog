@@ -42,7 +42,7 @@ code {
   margin: 0 auto;
 }
 
-.code-red {
+.code-yellow {
   background-color: rgb(250, 250, 230);
   padding: 10px;
   overflow: auto;
