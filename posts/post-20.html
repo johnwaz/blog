@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Access Props Using this.props</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="https://www.facebook.com/actualJohnWaz" target="_blank">John Waz</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('../assets/img/blog-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="post-heading">
+                        <h1>Access Props Using this.props</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <p>The last several challenges covered the basic ways to pass props to child components. But what if the child component that you're passing a prop to is an ES6 class component, rather than a stateless functional component? The ES6 class component uses a slightly different convention to access props.<br></p>
+                    <p>Anytime you refer to a class component within itself, you use the <code>this</code> keyword. To access props within a class component, you preface the code that you use to access it with <code>this</code>. For example, if an ES6 class component has a prop called <code>data</code>, you write <code>{this.props.data}</code> in JSX.<br></p>
+                    <hr>
+                    <p>Render an instance of the <code>ReturnTempPassword</code> component in the parent component <code>ResetPassword</code>. Here, give <code>ReturnTempPassword</code> a prop of <code>tempPassword</code> and assign it a value of a string that is at least 8 characters long. Within the child, <code>ReturnTempPassword</code>, access the <code>tempPassword</code> prop within the <code>strong</code> tags to make sure the user sees the temporary password.<br></p>
+                    <div class="code-yellow">
+                        <code class="code">
+                            <p>&nbsp;class ReturnTempPassword extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;Your temporary password is: &lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;class ResetPassword extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Reset Password&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;We've generated a new temporary password for you.&lt;/h3&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;Please reset this password from your account settings ASAP.&lt;/h3&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                        </code>
+                    </div>
+                    <hr>
+                    <p class="solution">My Solution:</p>
+                    <div class="code-green">
+                        <code class="code-sol">
+                            <p>&nbsp;class ReturnTempPassword extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;Your temporary password is:&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;strong&gt;{this.props.tempPassword}&lt;/strong&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/p&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;class ResetPassword extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Reset Password&lt;/h2&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;We've generated a new temporary password for you.&lt;/h3&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;Please reset this password from your account settings ASAP.&lt;/h3&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;ReturnTempPassword tempPassword={"Mcfuzzin"} /&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                        </code>
+                    </div>
+                    <p class="solution">Tests:</p>
+                    <ul class="mb-0 checkmark">
+                        <li>The <code>ResetPassword</code> component should return a single <code>div</code> element.</li>
+                        <li>The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.</li>
+                        <li>The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.</li>
+                        <li>The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least 8 characters.</li>
+                        <li>The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item"><a href="post-19.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-20.html">20</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <ul class="list-inline text-center">
+                        <a href="https://www.linkedin.com/in/john-wasielewicz" target="_blank">
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-star fab fa-linkedin fa-2x"></i></span></li>
+                        </a>
+                        <li class="list-inline-item"></li>
+                        <a href="https://github.com/johnwaz" target="_blank">
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-star fab fa-github-square fa-2x"></i></span></li>
+                        </a>
+                    </ul>
+                    <p class="text-muted copyright">Copyright © John Waz 2021</p>
+                    <p class="text-muted copyright credit">Credit <a class="link" href="https://www.freecodecamp.org" target="_blank"><span class="fcc">freeCodeCamp</span></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/clean-blog.js"></script>
+</body>
+
+</html>
