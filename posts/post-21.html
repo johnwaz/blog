@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Access Props Using this.props</title>
+    <title>Review Using Props with Stateless Functional Components</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Access Props Using this.props</h1>
+                        <h1>Review Using Props with Stateless Functional Components</h1>
                     </div>
                 </div>
             </div>
@@ -41,93 +41,79 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>The last several challenges covered the basic ways to pass props to child components. But what if the child component that you're passing a prop to is an ES6 class component, rather than a stateless functional component? The ES6 class component uses a slightly different convention to access props.<br></p>
-                    <p>Anytime you refer to a class component within itself, you use the <code>this</code> keyword. To access props within a class component, you preface the code that you use to access it with <code>this</code>. For example, if an ES6 class component has a prop called <code>data</code>, you write <code>{this.props.data}</code> in JSX.<br></p>
+                    <p>Except for the last challenge, you've been passing props to stateless functional components. These components act like pure functions. They accept props as input and return the same view every time they are passed the same props. You may be wondering what state is, and the next challenge will cover it in more detail. Before that, here's a review of the terminology for components.<br></p>
+                    <p>A <em>stateless functional component</em> is any function you write which accepts props and returns JSX. A <em>stateless component</em>, on the other hand, is a class that extends <code>React.Component</code>, but does not use internal state (covered in the next challenge). Finally, a <em>stateful component</em> is a class component that does maintain its own internal state. You may see stateful components referred to simply as components or React components.<br></p>
+                    <p>A common pattern is to try to minimize statefulness and to create stateless functional components wherever possible. This helps contain your state management to a specific area of your application. In turn, this improves development and maintenance of your app by making it easier to follow how changes to state affect its behavior.<br></p>
                     <hr>
-                    <p>Render an instance of the <code>ReturnTempPassword</code> component in the parent component <code>ResetPassword</code>. Here, give <code>ReturnTempPassword</code> a prop of <code>tempPassword</code> and assign it a value of a string that is at least 8 characters long. Within the child, <code>ReturnTempPassword</code>, access the <code>tempPassword</code> prop within the <code>strong</code> tags to make sure the user sees the temporary password.<br></p>
+                    <p>The code editor has a <code>CampSite</code> component that renders a <code>Camper</code> component as a child. Define the <code>Camper</code> component and assign it default props of <code>{ name: 'CamperBot' }</code>. Inside the <code>Camper</code> component, render any code that you want, but make sure to have one <code>p</code> element that includes only the <code>name</code> value that is passed in as a <code>prop</code>. Finally, define <code>propTypes</code> on the <code>Camper</code> component to require <code>name</code> to be provided as a prop and verify that it is of type <code>string</code>.<br></p>
                     <div class="code-yellow">
                         <code class="code">
-                            <p>&nbsp;class ReturnTempPassword extends React.Component {&nbsp;</p>
+                            <p>&nbsp;class CampSite extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;Your temporary password is: &lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Camper/&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;class ResetPassword extends React.Component {&nbsp;</p>
-                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
-                            <p>&nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Reset Password&lt;/h2&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;We've generated a new temporary password for you.&lt;/h3&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;Please reset this password from your account settings ASAP.&lt;/h3&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
-                            <p>&nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp;};&nbsp;</p>
                         </code>
                     </div>
                     <hr>
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;class ReturnTempPassword extends React.Component {&nbsp;</p>
+                            <p>&nbsp;class CampSite extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;Your temporary password is:&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;strong&gt;{this.props.tempPassword}&lt;/strong&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/p&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;Camper/&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;<span class="comment">// Change code below this line</span>&nbsp;</p>
+                            <p>&nbsp;class Camper extends React.Component {&nbsp;</p>
+                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
+                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;{this.props.name}&lt;/p&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>&nbsp;class ResetPassword extends React.Component {&nbsp;</p>
-                            <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
-                            <p>&nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp; &nbsp;render() {&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2&gt;Reset Password&lt;/h2&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;We've generated a new temporary password for you.&lt;/h3&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3&gt;Please reset this password from your account settings ASAP.&lt;/h3&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code below this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;ReturnTempPassword tempPassword={"Mcfuzzin"} /&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ <span class="comment">/* Change code above this line */</span> }&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
-                            <p>&nbsp; &nbsp;}&nbsp;</p>
+                            <p>&nbsp;<span class="comment">/* stateless component</span>&nbsp;</p>
+                            <p>&nbsp; &nbsp;<span class="comment">const Camper = props =&gt; &lt;p&gt;{props.name}&lt;/p&gt;</span>&nbsp;</p>
+                            <p>&nbsp;<span class="comment">*/</span>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;Camper.defaultProps = {&nbsp;</p>
+                            <p>&nbsp; &nbsp;name: 'CamperBot'&nbsp;</p>
+                            <p>&nbsp;};&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;Camper.propTypes = {&nbsp;</p>
+                            <p>&nbsp; &nbsp;name: PropTypes.string.isRequired&nbsp;</p>
                             <p>&nbsp;};&nbsp;</p>
                         </code>
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
-                        <li>The <code>ResetPassword</code> component should return a single <code>div</code> element.</li>
-                        <li>The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.</li>
-                        <li>The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.</li>
-                        <li>The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least 8 characters.</li>
-                        <li>The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.</li>
+                        <li>The <code>CampSite</code> component should render.</li>
+                        <li>The <code>Camper</code> component should render.</li>
+                        <li>The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.</li>
+                        <li>The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.</li>
+                        <li>The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.</li>
                     </ul>
                 </div>
             </div>
@@ -139,9 +125,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-19.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-20.html">20</a></li>
-                        <li class="list-inline-item"><a href="post-21.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-20.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-21.html">21</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
