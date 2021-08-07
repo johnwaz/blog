@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Create a Stateful Component</title>
+    <title>Render State in the User Interface</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto position-relative">
                     <div class="post-heading">
-                        <h1>Create a Stateful Component</h1>
+                        <h1>Render State in the User Interface</h1>
                     </div>
                 </div>
             </div>
@@ -41,31 +41,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <p>One of the most important topics in React is <code>state</code>. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.<br></p>
-                    <p>You create state in a React component by declaring a <code>state</code> property on the component class in its <code>constructor</code>. This initializes the component with <code>state</code> when it is created. The <code>state</code> property must be set to a JavaScript <code>object</code>. Declaring it looks like this:<br></p>
-                    <div class="code-ex">
-                        <code class="code-ex-data">
-                            <p>&nbsp;this.state = {&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp;}&nbsp;</p>
-                        </code>
-                    </div>
-                    <p>You have access to the <code>state</code> object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The <code>state</code> object can be as complex or as simple as you need it to be. Note that you must create a class component by extending <code>React.Component</code> in order to create <code>state</code> like this.<br></p>
+                    <p>Once you define a component's initial state, you can display any part of it in the UI that is rendered. If a component is stateful, it will always have access to the data in <code>state</code> in its <code>render()</code> method. You can access the data with <code>this.state</code>.<br></p>
+                    <p>If you want to access a state value within the <code>return</code> of the render method, you have to enclose the value in curly braces.<br></p>
+                    <p><code>state</code> is one of the most powerful features of components in React. It allows you to track important data in your app and render a UI in response to changes in this data. If your data changes, your UI will change. React uses what is called a virtual DOM, to keep track of changes behind the scenes. When state data updates, it triggers a re-render of the components using that data - including child components that received the data as a prop. React updates the actual DOM, but only where necessary. This means you don't have to worry about changing the DOM. You simply declare what the UI should look like.<br></p>
+                    <p>Note that if you make a component stateful, no other components are aware of its <code>state</code>. Its <code>state</code> is completely encapsulated, or local to that component, unless you pass state data to a child component as <code>props</code>. This notion of encapsulated <code>state</code> is very important because it allows you to write certain logic, then have that logic contained and isolated in one place in your code.<br></p>
                     <hr>
-                    <p>There is a component in the code editor that is trying to render a <code>name</code> property from its <code>state</code>. However, there is no <code>state</code> defined. Initialize the component with <code>state</code> in the <code>constructor</code> and assign your name to a property of <code>name</code>.<br></p>
+                    <p>In the code editor, <code>MyComponent</code> is already stateful. Define an <code>h1</code> tag in the component's render method which renders the value of <code>name</code> from the component's state.<br></p>
+                    <p><strong>Note:</strong> The <code>h1</code> should only render the value from <code>state</code> and nothing else. In JSX, any code you write with curly braces <code>{ }</code> will be treated as JavaScript. So to access the value from <code>state</code> just enclose the reference in curly braces.<br></p>
                     <div class="code-yellow">
                         <code class="code">
-                            <p>&nbsp;class StatefulComponent extends React.Component {&nbsp;</p>
+                            <p>&nbsp;class MyComponent extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Only change code below this line</span>&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Only change code above this line</span>&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;this.state = {&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;name: 'freeCodeCamp'&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;{this.state.name}&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<span class="comment"> /* Change code below this line */ </span>}&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<span class="comment"> /* Change code above this line */ </span>}&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
@@ -76,19 +73,19 @@
                     <p class="solution">My Solution:</p>
                     <div class="code-green">
                         <code class="code-sol">
-                            <p>&nbsp;class StatefulComponent extends React.Component {&nbsp;</p>
+                            <p>&nbsp;class MyComponent extends React.Component {&nbsp;</p>
                             <p>&nbsp; &nbsp;constructor(props) {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;super(props);&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Only change code below this line</span>&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;this.state = {&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp; &nbsp;name: "John Waz"&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp;name: 'freeCodeCamp'&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;}&nbsp;</p>
-                            <p>&nbsp; &nbsp; &nbsp;<span class="comment">// Only change code above this line</span>&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
                             <p>&nbsp; &nbsp;render() {&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;return (&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<span class="comment"> /* Change code below this line */ </span>}&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1&gt;{this.state.name}&lt;/h1&gt;&nbsp;</p>
+                            <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<span class="comment"> /* Change code above this line */ </span>}&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;&nbsp;</p>
                             <p>&nbsp; &nbsp; &nbsp;);&nbsp;</p>
                             <p>&nbsp; &nbsp;}&nbsp;</p>
@@ -97,10 +94,9 @@
                     </div>
                     <p class="solution">Tests:</p>
                     <ul class="mb-0 checkmark">
-                        <li><code>StatefulComponent</code> should exist and render.</li>
-                        <li><code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.</li>
-                        <li>The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.</li>
-                        <li>The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.</li>
+                        <li><code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.</li>
+                        <li><code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.</li>
+                        <li>The rendered <code>h1</code> header should only contain text rendered from the component's state.</li>
                     </ul>
                 </div>
             </div>
@@ -112,9 +108,8 @@
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto footer-pagination">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a href="post-21.html">&laquo;</a></li>
-                        <li class="list-inline-item"><a class="active" href="post-22.html">22</a></li>
-                        <li class="list-inline-item"><a href="post-23.html">&raquo;</a></li>
+                        <li class="list-inline-item"><a href="post-22.html">&laquo;</a></li>
+                        <li class="list-inline-item"><a class="active" href="post-23.html">23</a></li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-lg-8 mx-auto">
